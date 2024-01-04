@@ -1,17 +1,14 @@
 import NewTodo from "./components/NewTodo";
 import Todos from "./components/Todos";
-import Todo from "./models/todo";
-
-const todos = [
-  new Todo('Learn React'), new Todo('Learn Typescript')
-]
+import ToDosContextProvider from "./store/todos-context";
 
 function App() {
+
   return (
-    <div>
+    <ToDosContextProvider>
       <NewTodo />
-      <Todos items={todos} />
-    </div>
+      <Todos />
+    </ToDosContextProvider>
   );
 }
 
